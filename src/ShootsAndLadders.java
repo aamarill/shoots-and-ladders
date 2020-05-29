@@ -18,16 +18,10 @@ public class ShootsAndLadders {
     GameController gameController = new GameController(board, dice);
 
     // Game flow
-    boolean continueGame = true;
-    while (continueGame) {
+    while (gameController.getWinningPlayer() == null) {
       for (Player player : players) {
         gameController.playTurn(player);
         player.printStatus();
-
-        if (gameController.getWinningPlayer() != null) {
-          continueGame = false;
-          break;
-        }
       }
     }
   }
