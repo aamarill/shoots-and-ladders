@@ -34,7 +34,7 @@ public class GameController {
   }
 
   private boolean isWinner(Player player) {
-    return player.getPosition() > board.getSize();
+    return player.getPosition() >= board.getSize();
   }
 
   private int rollDice() {
